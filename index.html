@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GR-VIP-001 | Option A — Vận Hành Thông Minh</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a33;
+      --panel-2: #182347;
+      --text: #e9eefc;
+      --muted: #a9b6da;
+      --brand: #5bc0ff;
+      --ok: #41d392;
+      --warn: #ffd166;
+      --danger: #ff6b6b;
+      --border: #2a3a6f;
+      --chip: #233566;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 700px at 85% -10%, #203a79 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.2; }
+    h1 { font-size: 34px; }
+    h2 { font-size: 24px; margin-top: 30px; }
+    h3 { font-size: 18px; }
+    p { margin: 8px 0; color: var(--muted); }
+
+    .hero {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #16244a 0%, #111a34 100%);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .chip {
+      background: var(--chip);
+      border: 1px solid var(--border);
+      color: #cfe0ff;
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .grid { display: grid; gap: 14px; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .label {
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 8px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .layer {
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      background: rgba(255,255,255,.01);
+      margin-top: 10px;
+    }
+
+    .layer h3 { margin-bottom: 10px; }
+
+    .modules {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .module {
+      border: 1px solid var(--border);
+      background: var(--panel-2);
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(130px, 1fr));
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+
+    .step {
+      border: 1px solid var(--border);
+      background: var(--panel-2);
+      border-radius: 10px;
+      padding: 10px;
+      min-height: 120px;
+    }
+
+    .step .n {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: #294b95;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .kpi {
+      font-size: 12px;
+      color: #d6e6ff;
+      margin-top: 8px;
+      border-top: 1px solid var(--border);
+      padding-top: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      text-align: left;
+      background: #1c2b57;
+      color: #dce8ff;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .ok { color: var(--ok); font-weight: 600; }
+    .warn { color: var(--warn); font-weight: 600; }
+    .danger { color: var(--danger); font-weight: 600; }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #9cb0e3;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2, .grid-3, .modules { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <span class="label">MyClaw.vn | GR-VIP-001</span>
+      <h1>Option A — Vận Hành Thông Minh</h1>
+      <p>
+        <strong>1 Operations Engine + 6 module nghiệp vụ + 1 AI assistant dùng chung</strong>.
+        Đây là mô hình tối ưu cho giai đoạn đầu: xử lý nhanh, giảm lỗi, chi phí hợp lý, vẫn đủ kiểm soát rủi ro.
+      </p>
+      <div class="chips">
+        <span class="chip">Single-account Phase A</span>
+        <span class="chip">Manual release có kiểm soát</span>
+        <span class="chip">SePay-first</span>
+        <span class="chip">Realtime Telegram ops</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>1) Kiến trúc tổng quan — AI nằm ở đâu?</h2>
+      <p>AI assistant là <strong>lớp giao diện vận hành</strong> cho đội ngũ. Engine + 6 module là <strong>lớp xử lý nghiệp vụ</strong> phía sau.</p>
+
+      <div class="layer">
+        <h3>Lớp người dùng (Operators)</h3>
+        <p>Operator / Supervisor / Admin thao tác trên cùng 1 kênh Telegram vận hành.</p>
+      </div>
+
+      <div class="layer">
+        <h3>Lớp AI Assistant (dùng chung cho Gói A)</h3>
+        <p>Nhận lệnh, trả trạng thái, đẩy cảnh báo, tổng hợp báo cáo. Không thay thế rule engine — AI là cầu nối vận hành.</p>
+      </div>
+
+      <div class="layer">
+        <h3>Lớp Operations Engine (lõi điều phối)</h3>
+        <div class="modules">
+          <div class="module"><strong>1. Price Monitor</strong><br/>Theo dõi thị trường + áp chính sách giá.</div>
+          <div class="module"><strong>2. Order Processor</strong><br/>Quản lý vòng đời đơn (state machine).</div>
+          <div class="module"><strong>3. Payment Verifier</strong><br/>Đối soát 4 điểm: số tiền/tên/nội dung/tài khoản.</div>
+          <div class="module"><strong>4. Bank Rotator</strong><br/>Quản lý vòng quay ngân hàng + ngưỡng volume.</div>
+          <div class="module"><strong>5. Ops Dashboard</strong><br/>Giao diện lệnh, queue, trạng thái, cảnh báo.</div>
+          <div class="module"><strong>6. Audit & Compliance</strong><br/>Lưu vết đầy đủ, truy xuất và hậu kiểm.</div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <h3>Lớp tích hợp ngoài</h3>
+        <p>Binance API, SePay webhook, ngân hàng, VPS hạ tầng.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2) Workflow xử lý 1 đơn hàng — chạy như thế nào?</h2>
+      <div class="flow">
+        <div class="step"><div class="n">1</div><strong>Nhận đơn</strong><p>Order vào queue vận hành.</p><div class="kpi">Kênh: Telegram Ops</div></div>
+        <div class="step"><div class="n">2</div><strong>Giá & trạng thái</strong><p>Price Monitor + Order Processor đồng bộ dữ liệu.</p><div class="kpi">Tự động</div></div>
+        <div class="step"><div class="n">3</div><strong>Webhook thanh toán</strong><p>SePay gửi giao dịch vào hệ thống.</p><div class="kpi">Near realtime</div></div>
+        <div class="step"><div class="n">4</div><strong>Đối soát 4 điểm</strong><p>Payment Verifier kiểm tra amount/name/memo/account.</p><div class="kpi">Mục tiêu &lt;10s</div></div>
+        <div class="step"><div class="n">5</div><strong>Phân loại kết quả</strong><p><span class="ok">PASS</span> / <span class="warn">REVIEW_REQUIRED</span> / <span class="danger">FAIL</span>.</p><div class="kpi">Rule-based</div></div>
+        <div class="step"><div class="n">6</div><strong>Quyết định release</strong><p>Operator release khi PASS; supervisor duyệt case REVIEW.</p><div class="kpi">Manual control</div></div>
+        <div class="step"><div class="n">7</div><strong>Cảnh báo & giám sát</strong><p>AI assistant đẩy alert nếu mismatch/rủi ro.</p><div class="kpi">Mục tiêu &lt;30s</div></div>
+        <div class="step"><div class="n">8</div><strong>Ghi log & báo cáo</strong><p>Audit lưu toàn bộ hành động, phục vụ truy vết.</p><div class="kpi">Append-only log</div></div>
+      </div>
+    </section>
+
+    <section class="grid grid-2">
+      <article class="card">
+        <h2>3) Vận hành hằng ngày (Daily Ops)</h2>
+        <table>
+          <thead>
+            <tr><th>Khung việc</th><th>Ai làm</th><th>Hệ thống hỗ trợ</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Mở ca trực</td><td>Operator</td><td>AI assistant trả queue + trạng thái bank hiện tại</td></tr>
+            <tr><td>Giám sát đơn</td><td>Operator</td><td>Dashboard + cảnh báo realtime</td></tr>
+            <tr><td>Xử lý case lệch</td><td>Supervisor</td><td>Escalation tự động + log lịch sử</td></tr>
+            <tr><td>Điều chỉnh policy</td><td>Admin/Ops</td><td>Cấu hình ngưỡng volume/rule rotation</td></tr>
+            <tr><td>Review cuối ca</td><td>Owner/Audit</td><td>Báo cáo + audit log truy xuất theo ca</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="card">
+        <h2>4) Cơ chế an toàn trong Option A</h2>
+        <ul>
+          <li><strong>Không bypass quy trình release:</strong> tất cả release theo rule và role.</li>
+          <li><strong>Single-account guard:</strong> Phase A không cho chạy song song nhiều account.</li>
+          <li><strong>Dual-control tại điểm nhạy cảm:</strong> case rủi ro phải supervisor xác nhận.</li>
+          <li><strong>Audit bất khả biến:</strong> mọi hành động đều gắn timestamp + người thao tác.</li>
+          <li><strong>Bank rotation policy:</strong> tránh quá tải 1 tài khoản ngân hàng.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>5) Câu hỏi trọng tâm: “Engine + 6 module + AI” phối hợp ra sao?</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Thành phần</th>
+            <th>Vai trò thật sự</th>
+            <th>Ví dụ khi đang chạy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Operations Engine</strong></td>
+            <td>Điều phối toàn bộ luồng nghiệp vụ, trạng thái, policy.</td>
+            <td>Khi đơn vào, engine quyết định bước tiếp theo dựa trên state machine.</td>
+          </tr>
+          <tr>
+            <td><strong>6 Modules</strong></td>
+            <td>Mỗi module xử lý 1 năng lực cụ thể trong pipeline.</td>
+            <td>Payment Verifier xử lý đối soát; Bank Rotator chọn bank phù hợp.</td>
+          </tr>
+          <tr>
+            <td><strong>1 AI Assistant (shared)</strong></td>
+            <td>Interface cho con người: nhận lệnh, trả kết quả, gửi cảnh báo, tóm tắt.</td>
+            <td>Operator hỏi “/queue” hoặc “trạng thái bank?” → AI trả từ dữ liệu engine.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="footer-note">
+        <strong>Kết luận:</strong> Trong Gói A, AI không thay engine. AI là lớp giao tiếp giúp team vận hành dùng engine nhanh hơn và ít lỗi hơn.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>6) Vì sao Option A phù hợp để bắt đầu?</h2>
+      <div class="grid grid-3">
+        <div>
+          <h3>Chi phí tối ưu</h3>
+          <p>1 AI dùng chung nhưng vẫn khai thác trọn bộ 6 module của engine.</p>
+        </div>
+        <div>
+          <h3>Triển khai nhanh</h3>
+          <p>Mô hình gọn giúp go-live sớm, kiểm chứng hiệu quả trước khi mở rộng.</p>
+        </div>
+        <div>
+          <h3>Dễ nâng cấp lên B</h3>
+          <p>Giữ nguyên engine, chỉ mở rộng từ 1 AI shared lên AI cá nhân theo operator.</p>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">Tài liệu trình bày Option A (client-facing) — GR-VIP-001 | MyClaw.vn</p>
+  </div>
+</body>
+</html>
