@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GR-VIP-002 | Diana Spencer — AI Investment Analyst</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a33;
+      --panel2: #182347;
+      --text: #ecf2ff;
+      --muted: #afbee6;
+      --brand: #6ed6ff;
+      --ok: #42d392;
+      --warn: #ffd166;
+      --border: #2c3b6f;
+      --chip: #233566;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 80% -15%, #264a99 0%, var(--bg) 55%);
+      line-height: 1.45;
+    }
+    .container { max-width: 1180px; margin: 0 auto; padding: 28px 20px 60px; }
+    h1,h2,h3 { margin: 0 0 10px; line-height: 1.2; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 24px; margin-top: 28px; }
+    h3 { font-size: 18px; }
+    p { margin: 8px 0; color: var(--muted); }
+
+    .card { border: 1px solid var(--border); background: var(--panel); border-radius: 14px; padding: 16px; }
+    .hero { border: 1px solid var(--border); background: linear-gradient(180deg,#16244a 0%,#101933 100%); border-radius: 16px; padding: 24px; margin-bottom: 16px; }
+    .label { color: var(--brand); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; }
+
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .chip { background: var(--chip); border: 1px solid var(--border); color: #d5e3ff; border-radius: 999px; font-size: 12px; padding: 6px 10px; }
+
+    .grid { display: grid; gap: 14px; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+    .domain { border: 1px solid var(--border); background: var(--panel2); border-radius: 12px; padding: 12px; }
+    .domain h3 { margin-bottom: 6px; }
+    .domain ul { margin: 8px 0 0; padding-left: 18px; color: #c9d8ff; font-size: 14px; }
+
+    .flow { display: grid; grid-template-columns: repeat(7, minmax(140px,1fr)); gap: 10px; overflow-x: auto; padding-bottom: 4px; }
+    .step { border: 1px solid var(--border); background: var(--panel2); border-radius: 10px; padding: 10px; min-height: 132px; }
+    .n { width: 24px; height: 24px; border-radius: 999px; background: #2b4f9d; color: #fff; font-weight: 700; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+
+    .preview { border: 1px solid var(--border); background: #111a34; border-radius: 12px; padding: 12px; }
+    .mini-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .mini-table th,.mini-table td { border: 1px solid #32457f; padding: 6px; text-align: right; }
+    .mini-table th:first-child,.mini-table td:first-child { text-align: left; }
+    .formula { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #b9e6ff; font-size: 12px; }
+
+    .slide { border: 1px dashed #4b65ad; border-radius: 10px; padding: 10px; min-height: 150px; background: #142147; }
+    .slide-title { font-size: 14px; font-weight: 700; color: #dce9ff; margin-bottom: 8px; }
+
+    .report { border: 1px solid #32457f; border-radius: 10px; padding: 10px; background: #142147; }
+    .kpis { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin-top: 8px; }
+    .kpi { background: #1a2a57; border: 1px solid #3d56a0; border-radius: 8px; padding: 8px; }
+    .kpi .v { font-size: 18px; font-weight: 700; color: #fff; }
+    .ok { color: var(--ok); font-weight: 700; }
+    .warn { color: var(--warn); font-weight: 700; }
+
+    table { width: 100%; border-collapse: collapse; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    th,td { padding: 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { background: #1c2b57; text-align: left; color: #dce8ff; }
+    tr:last-child td { border-bottom: none; }
+
+    .note { margin-top: 12px; font-size: 13px; color: #9fb3e8; border-top: 1px solid var(--border); padding-top: 10px; }
+
+    @media (max-width: 920px) {
+      .grid-2,.grid-3,.kpis { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="label">MyClaw.vn | GR-VIP-002</div>
+      <h1>Diana Spencer — AI Senior Investment Analyst</h1>
+      <p>
+        Một vessel chuyên phân tích đầu tư, tài chính và pháp lý để tạo ra deliverables thực tế:
+        <strong>Excel có công thức, slide trình bày, báo cáo PDF, và khuyến nghị chiến lược</strong>.
+      </p>
+      <div class="chips">
+        <span class="chip">Urgent / ASAP</span>
+        <span class="chip">Vietnam-first compliance</span>
+        <span class="chip">Bilingual VN/EN</span>
+        <span class="chip">Google Workspace output</span>
+        <span class="chip">Telegram / Slack / Email</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>1) Diana hoạt động như thế nào?</h2>
+      <p>
+        Không phải bot trả lời chung chung. Diana vận hành theo 4 domain chuyên môn để xử lý end-to-end
+        từ yêu cầu đầu bài đến file giao cho khách.
+      </p>
+      <div class="grid grid-2">
+        <div class="domain">
+          <h3>Financial Domain</h3>
+          <ul>
+            <li>DCF / NPV / FS / Cashflow models</li>
+            <li>Scenario base / bull / bear</li>
+            <li>Sensitivity analysis, break-even, IRR</li>
+          </ul>
+        </div>
+        <div class="domain">
+          <h3>Legal & Regulatory Domain</h3>
+          <ul>
+            <li>Vietnam land / construction / tax / finance regulations</li>
+            <li>Legal constraints and compliance checks</li>
+            <li>Basic contract drafting templates</li>
+          </ul>
+        </div>
+        <div class="domain">
+          <h3>Document Domain</h3>
+          <ul>
+            <li>Google Sheets with formulas</li>
+            <li>Google Slides presentation decks</li>
+            <li>Google Docs reports + PDF export</li>
+          </ul>
+        </div>
+        <div class="domain">
+          <h3>Strategy Domain</h3>
+          <ul>
+            <li>FDI/project strategy (energy, BĐS, KCN, NOXH...)</li>
+            <li>M&A and investment thesis framing</li>
+            <li>Decision options + recommendation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2) Workflow vận hành (Option A for VIP-002)</h2>
+      <div class="flow">
+        <div class="step"><div class="n">1</div><strong>Input brief</strong><p>Client gửi scope + mục tiêu + tài liệu nền.</p></div>
+        <div class="step"><div class="n">2</div><strong>Clarify</strong><p>Diana hỏi ngược để chốt assumptions và output format.</p></div>
+        <div class="step"><div class="n">3</div><strong>Analyze</strong><p>Phân tích tài chính, pháp lý, chiến lược theo domain.</p></div>
+        <div class="step"><div class="n">4</div><strong>Model build</strong><p>Tạo Sheets (công thức), Docs (report), Slides (deck).</p></div>
+        <div class="step"><div class="n">5</div><strong>Review</strong><p>Kiểm tra logic, consistency, compliance VN.</p></div>
+        <div class="step"><div class="n">6</div><strong>Deliver</strong><p>Giao file qua Telegram/Slack/Email + PDF.</p></div>
+        <div class="step"><div class="n">7</div><strong>Iterate</strong><p>Nhận feedback, chỉnh phiên bản nhanh theo yêu cầu.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>3) Output Preview (điểm bán hàng chính)</h2>
+      <div class="grid grid-3">
+        <div class="preview">
+          <h3>Preview A — DCF Google Sheet</h3>
+          <table class="mini-table">
+            <thead>
+              <tr><th>Year</th><th>FCF (VND bn)</th><th>Discount Factor</th><th>PV</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2027</td><td>120</td><td>0.909</td><td>109.1</td></tr>
+              <tr><td>2028</td><td>145</td><td>0.826</td><td>119.8</td></tr>
+              <tr><td>2029</td><td>170</td><td>0.751</td><td>127.7</td></tr>
+            </tbody>
+          </table>
+          <p class="formula">Formula example: =FCF_t / (1+WACC)^t</p>
+          <p class="formula">NPV: =NPV(WACC, C6:C12)+TerminalValue/(1+WACC)^n</p>
+        </div>
+
+        <div class="preview">
+          <h3>Preview B — Investment Slide</h3>
+          <div class="slide">
+            <div class="slide-title">Project X — Investment Recommendation</div>
+            <ul>
+              <li>Base case NPV: +185 tỷ</li>
+              <li>IRR: 19.4%</li>
+              <li>Payback: 4.2 years</li>
+              <li>Main risk: legal permit timeline</li>
+              <li>Recommendation: <span class="ok">GO</span> with staged capital release</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="preview">
+          <h3>Preview C — PDF Report Snapshot</h3>
+          <div class="report">
+            <strong>Executive Summary</strong>
+            <p>Dự án có upside tốt trong kịch bản base/bull, nhưng cần kiểm soát tiến độ pháp lý và cấu trúc vốn giai đoạn 1.</p>
+            <div class="kpis">
+              <div class="kpi"><div>NPV</div><div class="v">+185 tỷ</div></div>
+              <div class="kpi"><div>IRR</div><div class="v">19.4%</div></div>
+              <div class="kpi"><div>Risk</div><div class="v warn">Medium</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="note">Lưu ý: Đây là mock preview để thể hiện loại deliverable Diana tạo ra. Số liệu thực sẽ dựa trên dữ liệu dự án của khách.</p>
+    </section>
+
+    <section class="grid grid-2">
+      <article class="card">
+        <h2>4) Phasing đề xuất</h2>
+        <table>
+          <thead>
+            <tr><th>Phase</th><th>Phạm vi</th><th>Timeline</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Phase A</strong></td>
+              <td>Financial analysis + Sheets/Slides/Docs output + VN legal research + bilingual + basic contracts</td>
+              <td>~2 tuần</td>
+            </tr>
+            <tr>
+              <td><strong>Phase B</strong></td>
+              <td>M&A frameworks, PR/marketing plans, advanced deck templates, partner comms</td>
+              <td>+2–4 tuần</td>
+            </tr>
+            <tr>
+              <td><strong>Phase C</strong></td>
+              <td>Multi-jurisdiction legal depth + fund management operations + full sector expansion</td>
+              <td>Theo scope</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="card">
+        <h2>5) Pricing framework (draft)</h2>
+        <table>
+          <thead><tr><th>Hạng mục</th><th>Đề xuất</th></tr></thead>
+          <tbody>
+            <tr><td>Setup</td><td><strong>8–12M</strong> (persona + reference corpus + output pipeline + QA)</td></tr>
+            <tr><td>Monthly</td><td><strong>6–10M</strong> (token-heavy usage, ongoing analyst support)</td></tr>
+            <tr><td>Pilot policy</td><td>Early-adopter discount cho referral từ Grey</td></tr>
+            <tr><td>Value anchor</td><td>1 senior analyst full-time thường 40–60M/tháng; Diana là analyst multiplier 24/7</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>6) Operating model — ai dùng, dùng để làm gì?</h2>
+      <table>
+        <thead><tr><th>Vai trò</th><th>Use case</th><th>Output nhận được</th></tr></thead>
+        <tbody>
+          <tr><td>Investment Manager</td><td>Đánh giá dự án đầu tư mới</td><td>DCF sheet + recommendation memo + 1 deck</td></tr>
+          <tr><td>CFO/Finance</td><td>Scenario planning, cashflow, funding plan</td><td>FS model + scenario table + KPI dashboard</td></tr>
+          <tr><td>Legal/Compliance</td><td>Check ràng buộc pháp lý VN</td><td>Compliance note + risk checklist + clause drafts</td></tr>
+          <tr><td>Founder/Board</td><td>Decision support</td><td>Executive summary PDF (key decision points)</td></tr>
+        </tbody>
+      </table>
+      <p class="note"><strong>Boundary:</strong> Diana hỗ trợ phân tích, mô hình và đề xuất. Quyết định pháp lý cuối cùng vẫn cần luật sư / cố vấn được cấp phép khi cần.</p>
+    </section>
+
+    <p class="note">GR-VIP-002 client-facing landing page (draft) — MyClaw.vn</p>
+  </div>
+</body>
+</html>
